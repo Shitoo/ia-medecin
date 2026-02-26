@@ -1,0 +1,167 @@
+---
+const faqs = [
+  {
+    question: "Qu'est-ce que ia-medecin.com ?",
+    answer: `ia-medecin.com est un site de référencement de solutions d'IA destinées aux médecins français. Notre objectif est simple : vous aider à vous y retrouver dans un marché en pleine expansion, en regroupant au même endroit les outils disponibles adaptés à la pratique médicale en France.`,
+    list: null,
+  },
+  {
+    question: "Quelle IA pour les médecins ?",
+    answer: `Il n'existe pas une seule IA pour les médecins, mais plusieurs catégories d'outils, chacune répondant à des besoins différents :`,
+    list: [
+      { label: "Aide à la documentation clinique", text: "génération automatique de comptes rendus et de courriers à partir de la consultation, pour réduire la charge administrative." },
+      { label: "Aide à la décision médicale", text: "analyse des données patient pour suggérer des diagnostics différentiels ou alerter sur des risques cliniques." },
+      { label: "Analyse d'imagerie médicale", text: "détection automatisée d'anomalies en radiologie, dermatologie, ophtalmologie ou échographie, avec des niveaux de performance validés cliniquement." },
+      { label: "Assistants conversationnels médicaux", text: "synthèse de la littérature médicale, aide à la rédaction, réponses à des questions cliniques complexes." },
+    ],
+    footer: "Le choix dépend de votre spécialité, de votre mode d'exercice et de la conformité de la solution au cadre réglementaire français.",
+  },
+  {
+    question: "Est-ce que l'IA va remplacer les médecins ?",
+    answer: `Non — et les études convergent sur ce point. L'IA est un outil d'amplification, pas de substitution.\n\nLa médecine repose sur des dimensions que l'IA ne peut pas reproduire : la relation de confiance, l'écoute empathique, le raisonnement face à l'incertitude, et la responsabilité éthique et juridique de l'acte médical. En droit français, la responsabilité médicale reste entièrement portée par le praticien, quelle que soit la technologie utilisée.\n\nEn revanche, l'IA transforme déjà certaines tâches répétitives et chronophages. La HAS et le Ministère de la Santé reconnaissent d'ailleurs l'IA comme un levier d'amélioration de la qualité des soins, à condition qu'elle reste sous supervision médicale. Le médecin de demain est celui qui sait travailler avec l'IA, en gardant son jugement clinique au centre de la décision.`,
+    list: null,
+  },
+  {
+    question: "Comment choisir sa solution d'IA en médecine en France ?",
+    answer: `Choisir une solution d'IA implique de vérifier plusieurs critères essentiels, au-delà des promesses marketing :`,
+    list: [
+      { label: "Conformité réglementaire", text: "la solution est-elle certifiée dispositif médical (marquage CE) et conforme au règlement européen sur l'IA (AI Act) ?" },
+      { label: "Hébergement des données de santé (HDS)", text: "les données de vos patients doivent être hébergées sur un serveur certifié HDS, certification délivrée par l'Agence du Numérique en Santé (ANS)." },
+      { label: "Interopérabilité", text: "l'outil s'intègre-t-il à votre logiciel de gestion de cabinet et à la messagerie sécurisée MSSanté ?" },
+      { label: "Validation clinique", text: "existe-t-il des études ou évaluations menées dans le contexte du système de santé français ?" },
+      { label: "Support et accompagnement", text: "une documentation en français, une équipe réactive et une bonne compréhension des contraintes locales (CPAM, codification CIM-10…) sont des critères déterminants." },
+    ],
+    footer: null,
+  },
+];
+---
+
+<section class="faq" id="faq">
+  <div class="faq__container">
+
+    <div class="faq__header">
+      <h2 class="faq__title">Questions fréquentes</h2>
+    </div>
+
+    <div class="faq__list">
+      {faqs.map((item) => (
+        <div class="faq__item">
+          <h3 class="faq__question">{item.question}</h3>
+          <div class="faq__answer">
+            {item.answer.split('\n\n').map((para) => (
+              <p>{para}</p>
+            ))}
+            {item.list && (
+              <ul class="faq__list-items">
+                {item.list.map((li) => (
+                  <li>
+                    <span class="faq__list-label">{li.label}</span> — {li.text}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {item.footer && <p>{item.footer}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq {
+    background-color: #ffffff;
+    padding: 5rem 2rem;
+  }
+
+  .faq__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .faq__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .faq__title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    max-width: 760px;
+  }
+
+  .faq__item {
+    padding: 2rem 0;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .faq__item:first-child {
+    border-top: 1px solid #f1f1f1;
+  }
+
+  .faq__question {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: #0f172a;
+    font-family: 'Switzer', system-ui, sans-serif;
+    line-height: 1.4;
+  }
+
+  .faq__answer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .faq__answer p {
+    font-size: 0.9375rem;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .faq__list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .faq__list-items li {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    color: #475569;
+    line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .faq__list-items li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #2C1FEA;
+  }
+
+  .faq__list-label {
+    font-weight: 500;
+    color: #1e293b;
+  }
+</style>

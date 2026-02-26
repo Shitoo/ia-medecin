@@ -1,0 +1,62 @@
+---
+---
+
+<header class="navbar">
+  <div class="navbar__container">
+
+    <a href="/" class="navbar__logo" aria-label="IA-Médecin accueil">
+      <img src="/ia-medecin-logo.svg" alt="IA-Médecin logo" class="navbar__logo-img" />
+    </a>
+
+    <a href="#solutions" class="navbar__cta">Explorer les IA</a>
+
+  </div>
+</header>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #ffffff;
+  }
+
+  .navbar__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .navbar__logo-img {
+    height: 30px;
+    width: auto;
+  }
+
+  .navbar__cta {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background-color: #2C1FEA;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Switzer', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+
+  .navbar__cta:hover {
+    background-color: #2C1FEA;
+  }
+</style>

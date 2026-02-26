@@ -1,0 +1,219 @@
+---
+const solutions = [
+  {
+    name: "MedScript",
+    category: "Transcription",
+    description: "Transcription automatique de vos consultations en temps réel avec synthèse structurée.",
+    initial: "M",
+    color: "#2C1FEA",
+    bg: "#EEF0FF",
+  },
+  {
+    name: "DiagnoVision",
+    category: "Imagerie médicale",
+    description: "Analyse et interprétation d'imagerie médicale assistée par intelligence artificielle.",
+    initial: "D",
+    color: "#0891B2",
+    bg: "#E0F7FA",
+  },
+  {
+    name: "OrdoSmart",
+    category: "Ordonnances",
+    description: "Génération et vérification intelligente d'ordonnances selon les recommandations HAS.",
+    initial: "O",
+    color: "#059669",
+    bg: "#D1FAE5",
+  },
+  {
+    name: "DocAdmin",
+    category: "Administration",
+    description: "Automatisation des tâches administratives pour réduire la charge documentaire.",
+    initial: "D",
+    color: "#D97706",
+    bg: "#FEF3C7",
+  },
+  {
+    name: "TéléIA",
+    category: "Télémédecine",
+    description: "Assistant IA intégré à vos consultations à distance pour un meilleur diagnostic.",
+    initial: "T",
+    color: "#7C3AED",
+    bg: "#EDE9FE",
+  },
+  {
+    name: "BioReader",
+    category: "Biologie",
+    description: "Interprétation automatique des résultats biologiques et alertes personnalisées.",
+    initial: "B",
+    color: "#DB2777",
+    bg: "#FCE7F3",
+  },
+  {
+    name: "AgendaFlow",
+    category: "Agenda",
+    description: "Optimisation IA de votre planning pour réduire les délais et les rendez-vous manqués.",
+    initial: "A",
+    color: "#0F766E",
+    bg: "#CCFBF1",
+  },
+  {
+    name: "MedBot",
+    category: "Chatbot patient",
+    description: "Assistant conversationnel intelligent pour orienter et informer vos patients 24h/24.",
+    initial: "M",
+    color: "#EA580C",
+    bg: "#FFEDD5",
+  },
+];
+---
+
+<section class="solutions" id="solutions">
+  <div class="solutions__container">
+
+    <div class="solutions__header">
+      <h2 class="solutions__title">Les solutions IA pour médecins</h2>
+      <p class="solutions__subtitle">Une sélection de solutions d'intelligence artificielle et de produits intégrant l'IA pour les médecins en France.</p>
+    </div>
+
+    <div class="solutions__grid">
+      {solutions.map((solution) => (
+        <div class="card">
+          <div class="card__category">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="7" cy="7" r="2" fill="currentColor"/>
+              <circle cx="2" cy="2" r="1.5" fill="currentColor"/>
+              <circle cx="12" cy="2" r="1.5" fill="currentColor"/>
+              <circle cx="2" cy="12" r="1.5" fill="currentColor"/>
+              <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+              <line x1="7" y1="7" x2="2" y2="2" stroke="currentColor" stroke-width="1"/>
+              <line x1="7" y1="7" x2="12" y2="2" stroke="currentColor" stroke-width="1"/>
+              <line x1="7" y1="7" x2="2" y2="12" stroke="currentColor" stroke-width="1"/>
+              <line x1="7" y1="7" x2="12" y2="12" stroke="currentColor" stroke-width="1"/>
+            </svg>
+            {solution.category}
+          </div>
+
+          <div class="card__logo" style={`background-color: ${solution.bg};`}>
+            <span class="card__initial" style={`color: ${solution.color};`}>{solution.initial}</span>
+          </div>
+
+          <h3 class="card__name">{solution.name}</h3>
+          <p class="card__description">{solution.description}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .solutions {
+    background-color: #ffffff;
+    padding: 5rem 2rem;
+  }
+
+  .solutions__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .solutions__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .solutions__title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .solutions__subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 520px;
+  }
+
+  .solutions__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  /* Card */
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #e8e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    transition: background-image 0.2s ease;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    background-image: radial-gradient(ellipse at 100% 50%, rgba(44, 31, 234, 0.15) 0%, transparent 70%);
+  }
+
+  .card__category {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #64748b;
+    background-color: #f8f8fc;
+    border: 1px solid #e8e8f0;
+    border-radius: 999px;
+    padding: 0.25rem 0.625rem;
+  }
+
+  .card__logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.25rem 0;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .card__initial {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Switzer', system-ui, sans-serif;
+  }
+
+  .card__name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+    font-family: 'Switzer', system-ui, sans-serif;
+  }
+
+  .card__description {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 1024px) {
+    .solutions__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .solutions__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
