@@ -36,6 +36,23 @@ const faqs = [
 ];
 ---
 
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": [
+        item.answer,
+        item.list ? item.list.map((li) => `${li.label} : ${li.text}`).join(' ') : null,
+        item.footer ?? null,
+      ].filter(Boolean).join(' '),
+    },
+  })),
+})} />
+
 <section class="faq" id="faq">
   <div class="faq__container">
 
