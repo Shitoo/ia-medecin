@@ -1,0 +1,46 @@
+{
+  "id": "solution",
+  "label": "Solution",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "company_name": {
+        "type": "Text",
+        "config": {
+          "label": "Nom de la solution",
+          "placeholder": "Ex: MedScript"
+        }
+      },
+      "category": {
+        "type": "Text",
+        "config": {
+          "label": "Catégorie",
+          "placeholder": "Ex: Transcription"
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description courte",
+          "placeholder": "Une phrase résumant la solution..."
+        }
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "website_url": {
+        "type": "Text",
+        "config": {
+          "label": "URL du site",
+          "placeholder": "https://example.com"
+        }
+      }
+    }
+  }
+}
