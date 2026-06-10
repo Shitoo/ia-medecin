@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 4321
+    },
+    {
+      "name": "catsitting24",
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["/Users/rachida/Documents/catsitting24/node_modules/.bin/astro", "dev", "--root", "/Users/rachida/Documents/catsitting24", "--port", "4322"],
+      "port": 4322
     }
   ]
 }
